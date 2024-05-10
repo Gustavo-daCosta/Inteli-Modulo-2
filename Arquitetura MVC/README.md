@@ -15,13 +15,14 @@ Nas Models, são definidos os modelos do software, ou seja, onde é definido as 
 - **Administrador:** classe que representa um usuário com permissões de administrador.
 - **Perguntas:** classe que representa as perguntas que serão feitas no formulário.
 - **Respostas:** classe que representa as respostas apresentadas pelo usuário durante o preenchimento do formulário.
+- **Formulário:** a classe de formulário está atrelada as classes de perguntas e respostas, ela permite que mais de um formulário exista, além de relacionar cada formulário a suas respectivas perguntas e respostas.
 
 Além disso, a model é a camada responsável por fazer a conexão com o banco de dados.
 
 #### Controllers
 
 Nos controllers, são criadas as funcionalidades por trás de cada classe/tabela, ou seja, no controller são criadas as funções que permitem manipular os dados do banco de dados, permitindo que funções para listar, procurar, criar, apagar e editar sejam criadas.
-Cada classe possui suas funções, que se adaptam a necessidade da classe, com base nos seus atributos.
+Cada classe possui suas funções, que se adaptam a necessidade da classe, com base nos seus atributos, assim como é demonstrado como cada classe se relaciona.
 
 #### View
 
@@ -30,8 +31,9 @@ A view é a camada que corresponde a tudo que será mostrado para o usuário do 
 - Home
 - Login
 - Cadastro
+- Esqueci a senha
 - Formulário
 
 # Funcionalidade
 
-Como um todo a arquitetura do software é simples, porém prática e rápida, uma vez que não é necessária uma grande quantidade de tabelas e os dados podem ser armazenados e manipulados mais facilmente, além de que facilita as "querys" que utilizam mais de uma tabela ao mesmo tempo.
+Como um todo a arquitetura do software é simples, porém prática e rápida, uma vez que não é necessária uma grande quantidade de tabelas e os dados podem ser armazenados e manipulados mais facilmente, além de que facilita as "querys" que utilizam mais de uma tabela ao mesmo tempo. No caso, esta arquitetura é 
