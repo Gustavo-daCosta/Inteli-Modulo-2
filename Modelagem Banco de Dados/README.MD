@@ -1,33 +1,40 @@
+# Modelagem de banco de dados
+
+A modelagem do banco de dados consiste em uma forma de representar a construção de um banco de dados, representando suas tabelas e colunas, além de demonstrar como cada uma delas se conecta e se relaciona.
+
 ![](db_model.png)
 
 # Tabelas
 
 ### Formulário
 
-- **id**: INTEGER (Chave primária, identificador único)
-- **Descrição**: TEXT
+- **id**: UUID (Chave primária, identificador único)
+- **Título**: TEXT (não nulo)
+- **Descrição**: TEXT (não nulo)
 
 ### Administrador
 
-- **id**: INTEGER (Chave primária, identificador único)
+- **id**: UUID (Chave primária, identificador único)
 - **Nome**: TEXT (não nulo)
 - **E-mail**: TEXT (não nulo)
 - **Senha**: TEXT (não nulo)
 
 ### Pergunta
 
-- **id**: INTEGER (Chave primária, identificador único)
+- **id**: UUID (Chave primária, identificador único)
 - **Título**: TEXT (não nulo)
 - **Descrição**: TEXT
 - **Tipo**: TEXT (não nulo)
-- **id_Formulário** referenciando Formulário.id (Chave estrangeira, não nulo)
+- **id_Formulário** UUID referenciando Formulário.id (Chave estrangeira, não nulo)
 
 ### Resposta
 
-- **id**: INTEGER (Chave primária, identificador único)
+- **id**: UUID (Chave primária, identificador único)
 - **Resposta**: TEXT (não nulo)
 - **Tipo**: TEXT (não nulo)
-- **id_Formulário** referenciando Formulário.id (Chave estrangeira, não nulo)
+- **id_Formulário** UUID referenciando Formulário.id (Chave estrangeira, não nulo)
+- **id_Pergunta** UUID referenciando Pergunta.id (Chave estrangeira, não nulo)
+
 
 # Relacionamentos
 

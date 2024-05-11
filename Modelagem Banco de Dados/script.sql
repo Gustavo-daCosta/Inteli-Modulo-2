@@ -14,6 +14,7 @@ DROP TABLE IF EXISTS `Formulário`;
 		
 CREATE TABLE `Formulário` (
   `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `Título` MEDIUMTEXT NULL DEFAULT NULL,
   `Descrição` MEDIUMTEXT NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
@@ -61,6 +62,7 @@ CREATE TABLE `Resposta` (
   `Resposta` MEDIUMTEXT NULL DEFAULT NULL,
   `Tipo` MEDIUMTEXT NULL DEFAULT NULL,
   `id_Formulário` INTEGER NULL DEFAULT NULL,
+  `id_Pergunta` INTEGER NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -70,6 +72,7 @@ CREATE TABLE `Resposta` (
 
 ALTER TABLE `Pergunta` ADD FOREIGN KEY (id_Formulário) REFERENCES `Formulário` (`id`);
 ALTER TABLE `Resposta` ADD FOREIGN KEY (id_Formulário) REFERENCES `Formulário` (`id`);
+ALTER TABLE `Resposta` ADD FOREIGN KEY (id_Pergunta) REFERENCES `Pergunta` (`id`);
 
 -- ---
 -- Table Properties
@@ -84,11 +87,11 @@ ALTER TABLE `Resposta` ADD FOREIGN KEY (id_Formulário) REFERENCES `Formulário`
 -- Test Data
 -- ---
 
--- INSERT INTO `Formulário` (`id`,`Descrição`) VALUES
--- ('','');
+-- INSERT INTO `Formulário` (`id`,`Título`,`Descrição`) VALUES
+-- ('','','');
 -- INSERT INTO `Administrador` (`id`,`Nome`,`E-mail`,`Senha`) VALUES
 -- ('','','','');
 -- INSERT INTO `Pergunta` (`id`,`Título`,`Descrição`,`Tipo`,`id_Formulário`) VALUES
 -- ('','','','','');
--- INSERT INTO `Resposta` (`id`,`Resposta`,`Tipo`,`id_Formulário`) VALUES
--- ('','','','');
+-- INSERT INTO `Resposta` (`id`,`Resposta`,`Tipo`,`id_Formulário`,`id_Pergunta`) VALUES
+-- ('','','','','');
